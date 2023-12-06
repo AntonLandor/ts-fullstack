@@ -64,8 +64,12 @@ const CrudShowcase = async () => {
               {latestTransaction.accountId}
             </p>
             <p>
-              current balance:{" "}
-              <span className="font-bold">{account?.balance}$</span>
+              {account ? (
+                <>
+                  current balance:{" "}
+                  <span className="font-bold">{account?.balance}$</span>
+                </>
+              ) : null}
             </p>
           </>
         ) : (
