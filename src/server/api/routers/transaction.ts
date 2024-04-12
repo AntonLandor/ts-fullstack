@@ -6,7 +6,7 @@ export const transactionRouter = createTRPCRouter({
     .input(transactionSchema)
     .mutation(async ({ ctx, input }) => {
       const amount = parseInt(input.amount);
-      if (isNaN(amount) || amount === 0) {
+      if (isNaN(amount) || amount === 0 || input.amount !== amount.toString()) {
         throw new Error("Amount must be an integer");
       }
 
